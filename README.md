@@ -7,13 +7,19 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+## System dependencies
+* Yarn
+* Node.js
 
-* Configuration
+## Configuration
+* Command used to install postgres gem on mac with postgres.app when pg gem fails gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Version‌​s/latest/bin/pg_config
 
-* Database creation
+## Database creation
+* Databases are created using postgresql
+* CREATE DATABASE "trello-clone_development";
+* CREATE DATABASE "trello-clone_test";
 
-* Database initialization
+## Database initialization
 
 * How to run the test suite
 

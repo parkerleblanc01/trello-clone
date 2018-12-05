@@ -38,6 +38,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.7)
+      activerecord (>= 3.0)
     arel (8.0.0)
     autoprefixer-rails (9.4.2)
       execjs
@@ -57,6 +59,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.3)
+    connection_pool (2.2.2)
     crass (1.0.4)
     devise (4.5.0)
       bcrypt (~> 3.0)
@@ -102,6 +105,10 @@ GEM
     popper_js (1.14.5)
     puma (3.12.0)
     rack (2.0.6)
+    rack-protection (2.0.4)
+      rack
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6.1)
@@ -131,6 +138,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.3)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -146,6 +154,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sidekiq (5.2.3)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -175,6 +187,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (3.5.5)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -183,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   bootstrap (~> 4.1.2)
   byebug
   coffee-rails (~> 4.2)
@@ -195,12 +212,14 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.6)
   sass-rails (~> 5.0)
+  sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webpacker
 
 BUNDLED WITH
    1.16.0.pre.3

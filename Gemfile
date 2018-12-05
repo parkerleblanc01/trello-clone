@@ -34,6 +34,9 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.2'
 gem 'devise'
+gem 'webpacker'
+gem 'acts_as_list'
+gem 'sidekiq'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
