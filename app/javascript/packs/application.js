@@ -10,9 +10,11 @@
 import Vue from 'vue/dist/vue.esm'
 import Vuex from 'vuex'
 import App from '../app.vue'
+import VueSweetalert2 from 'vue-sweetalert2'
 import TurbolinksAdapter from 'vue-turbolinks'
 
 Vue.use(Vuex)
+Vue.use(VueSweetalert2)
 Vue.use(TurbolinksAdapter)
 
 window.store = new Vuex.Store({
@@ -28,6 +30,9 @@ window.store = new Vuex.Store({
       const index = state.lists.findIndex(item => item.id == data.id)
       state.lists.splice(index, 1)
       state.lists.splice(data.position - 1, 0, data)
+    },
+    deleteList(state, data){
+      state.lists.splice(data.position - 1 , 1)
     },
     addCard(state, data) {
       const index = state.lists.findIndex(item => item.id == data.list_id)
@@ -54,6 +59,10 @@ window.store = new Vuex.Store({
         state.lists[new_list_index].cards.splice(old_card_index, 1)
         state.lists[new_list_index].cards.splice(data.position - 1, 0, data)
       }
+    },
+    deleteCard(state, data){
+      const list_index = state.lists.findIndex((item) => item.id === data.list_id )
+      state.lists[list_index].cards.splice(data.position - 1, 1)
     }
   }
 })

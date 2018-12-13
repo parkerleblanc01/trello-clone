@@ -59,7 +59,9 @@ class ListsController < ApplicationController
   # DELETE /lists/1.json
   def destroy
     @list.destroy
+    ActionCable.server.broadcast "board", { commit: 'deleteList', payload: render_to_string(:show, format: :json) }
     respond_to do |format|
+
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end

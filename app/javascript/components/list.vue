@@ -1,6 +1,8 @@
 <template>
   <div class="list">
-    <h6>{{ list.name }}</h6>
+    <div class="list-title">
+      <h6>{{ list.name }}</h6><a v-on:click="deleteList" class="right">Delete</a>
+    </div>
 
     <draggable v-model="list.cards" :options="{group: 'cards'}" class="dragArea" @change="cardMoved">
       <card v-for="card in list.cards" :key="card.id" :card="card" :list="list"></card>
@@ -75,6 +77,26 @@ export default{
         },
         beforeSend: function() {return true}
       })
+    },
+
+    deleteList: function() {
+      this.$swal({
+        title: "Delete this list?",
+        text: "Are you sure? You'll lose all the cards in this list!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Yes, Delete it!"
+      }).then((isConfirmed) => {
+        if(isConfirmed.value){
+          Rails.ajax({
+            url: `/lists/${this.list.id}`,
+            type: "DELETE",
+            dataType: "json",
+            beforeSend: function() {return true}
+          })
+        }
+      })
     }
   }
 
@@ -82,7 +104,16 @@ export default{
 </script>
 
 <style scoped>
+h6 {
+  display: inline;
+}
+.list-title{
+  padding-bottom: 10px;
+}
 .dragArea {
   min-height: 20px;
+}
+.right{
+  float: right;
 }
 </style>

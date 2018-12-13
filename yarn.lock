@@ -6256,6 +6256,11 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+sweetalert2@7.x:
+  version "7.32.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.32.2.tgz#bda42fe8a50f5f6445a1684ed80f87840e0f5dd1"
+  integrity sha512-BDdr3UdMi2PVLwNTbg8gXFDW0+ZAvO4r5aWbburfBuQEsszIYVM6Oh/A9bGIKQQczurFXx/HVINESszcBzPA0Q==
+
 tapable@^0.2.7:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.9.tgz#af2d8bbc9b04f74ee17af2b4d9048f807acd18a8"
@@ -6636,6 +6641,13 @@ vue-style-loader@^4.0.1:
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
+
+vue-sweetalert2@^1.5.11:
+  version "1.5.11"
+  resolved "https://registry.yarnpkg.com/vue-sweetalert2/-/vue-sweetalert2-1.5.11.tgz#a23b820c48fc916674006321c8eb8bfebea2fbb0"
+  integrity sha512-8D/b+faYNwldJZOuw7oLgrC5ABXhq5KJlRvSFIm2v56Tb6etvGVWoKBJjmWW64pSBGDlApE058SSpogcXGRQdQ==
+  dependencies:
+    sweetalert2 "7.x"
 
 vue-template-compiler@^2.5.17:
   version "2.5.17"

@@ -10,7 +10,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">{{ card.name }}</h5>
+            <h5 class="modal-title">{{ card.name }}</h5><a v-on:click="deleteCard" class="right">Delete</a>
           </div>
           <div class="modal-body">
             <input v-model="name" class="form-control"></input>
@@ -55,6 +55,26 @@
             this.editing = false
           },
           beforeSend: function() {return true}
+        })
+      },
+
+      deleteCard: function() {
+        this.$swal({
+          title: "Delete this card?",
+          text: "Are you sure? You can't turn back!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Yes, Delete it!"
+        }).then((isConfirmed) => {
+          if(isConfirmed.value){
+            Rails.ajax({
+              url: `/cards/${this.card.id}`,
+              type: "DELETE",
+              dataType: "json",
+              beforeSend: function() {return true}
+            })
+          }
         })
       }
     }

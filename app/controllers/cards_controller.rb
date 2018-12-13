@@ -59,6 +59,7 @@ class CardsController < ApplicationController
   # DELETE /cards/1.json
   def destroy
     @card.destroy
+    ActionCable.server.broadcast "board", { commit: 'deleteCard', payload: render_to_string(:show, format: :json) }
     respond_to do |format|
       format.html { redirect_to cards_url, notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
