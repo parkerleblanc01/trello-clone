@@ -20,3 +20,8 @@ Tutorial located at: https://gorails.com/episodes/rails-vuejs-trello-clone-part-
 * Databases are created using postgresql
 * CREATE DATABASE "trello-clone_development";
 * CREATE DATABASE "trello-clone_test";
+
+## Initialize
+* To start, run the following commands
+* Rails db:migrate
+* yarn
