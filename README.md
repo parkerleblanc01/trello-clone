@@ -11,6 +11,7 @@ Tutorial located at: https://gorails.com/episodes/rails-vuejs-trello-clone-part-
 * Yarn
 * Webpacker
 * Vue.js
+* Vuex
 
 ## Configuration
 * Command used to install postgres gem on mac with postgres.app when pg gem fails gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Version‌​s/latest/bin/pg_config
