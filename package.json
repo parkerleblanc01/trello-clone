@@ -1,6 +1,7 @@
 {
   "name": "trello-clone",
   "engines": {
+    "yarn" : "1.12.3"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
