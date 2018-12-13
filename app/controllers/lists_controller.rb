@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_list, only: [:show, :edit, :update, :destroy, :move]
 
   # GET /lists
@@ -66,6 +67,7 @@ class ListsController < ApplicationController
 
   def move
     @list.insert_at(list_params[:position].to_i)
+    ActionCable.server.broadcast "board", { commit: 'moveList', payload: render_to_string(:show, format: :json) }
     render action: :show
   end
 

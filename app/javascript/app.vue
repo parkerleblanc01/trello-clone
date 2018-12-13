@@ -1,6 +1,8 @@
 <template>
-  <draggable :list="lists" :options="{group: 'lists'}" class="board dragArea" @end="listMoved">
-    <list v-for="(list, index) in lists" :list="list"></list>
+  <div class="board">
+    <draggable :list="lists" :options="{group: 'lists'}" class="dragArea d-inline-block" @end="listMoved">
+      <list v-for="(list, index) in lists" :list="list"></list>
+    </draggable>
 
     <div class="list">
       <a v-if="!editing" v-on:click="startEditing">Add a list</a>
@@ -8,7 +10,7 @@
       <button v-if="editing" v-on:click="createList" class="btn btn-secondary">Add</button>
       <a v-if="editing" v-on:click="editing=false">Cancel</a>
     </div>
-  </draggable>
+  </div>
 </template>
 
 <script>

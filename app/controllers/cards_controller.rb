@@ -67,6 +67,7 @@ class CardsController < ApplicationController
 
   def move
     @card.update(card_params)
+    ActionCable.server.broadcast "board", { commit: 'moveCard', payload: render_to_string(:show, format: :json) }
     render action: :show
   end
 
