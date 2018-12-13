@@ -1,15 +1,16 @@
 # Trello Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+View the site at:
 
-Things you may want to cover:
+Created by following a video series created by GoRails
+Tutorial located at: https://gorails.com/episodes/rails-vuejs-trello-clone-part-1
 
-* Ruby version
+* Ruby version: 2.4
 
 ## System dependencies
 * Yarn
-* Node.js
+* Webpacker
+* Vue.js
 
 ## Configuration
 * Command used to install postgres gem on mac with postgres.app when pg gem fails gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Version‌​s/latest/bin/pg_config
@@ -18,13 +19,3 @@ Things you may want to cover:
 * Databases are created using postgresql
 * CREATE DATABASE "trello-clone_development";
 * CREATE DATABASE "trello-clone_test";
-
-## Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
