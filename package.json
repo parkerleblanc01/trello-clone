@@ -1,6 +1,5 @@
 {
   "name": "trello-clone",
-  "private": true,
   "engines": {
     "node": "9.3.0",
     "yarn": "1.12.3"
