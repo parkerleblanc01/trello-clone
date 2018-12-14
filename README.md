@@ -1,6 +1,6 @@
 # Trello Clone
 
-View the site at:
+View the site at: https://vue-trello-clone.herokuapp.com/
 
 Created by following a video series created by GoRails
 Tutorial located at: https://gorails.com/episodes/rails-vuejs-trello-clone-part-1
