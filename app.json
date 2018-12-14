@@ -20,9 +20,6 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
-    },
-    "YARN_PRODUCTION": {
-      "required": true
     }
   },
   "formation": {
@@ -32,8 +29,8 @@
   ],
   "buildpacks": [
     {
-      "url": "heroku/ruby",
-      "url": "heroku/nodejs"
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#v83",
+      "url": "heroku/ruby"
     }
   ]
 }
