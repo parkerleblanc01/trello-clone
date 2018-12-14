@@ -1,5 +1,5 @@
 {
-  "name": "trello-clone",
+  "name": "vue-trello-clone",
   "dependencies": {
     "@rails/webpacker": "3.5",
     "vue": "^2.5.17",
