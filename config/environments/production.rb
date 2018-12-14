@@ -16,6 +16,8 @@ config.webpacker.check_yarn_integrity = false
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.web_socket_server_url = "wss://vue-trello-clone.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://vue-trello-clone.herokuapp.com', 'http://vue-trello-clone.herokuapp.com']
 
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
